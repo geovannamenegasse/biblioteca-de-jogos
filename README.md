@@ -15,7 +15,7 @@ Ser um local centralizado para compra, venda e gerenciamento de jogos. Permitind
 - Download dos arquivos dos jogos
 
 #### Tecnologias:
-- React
+- Angular js
 - Node com Express js
 - MySQL
 
@@ -27,7 +27,29 @@ Ser um local centralizado para compra, venda e gerenciamento de jogos. Permitind
 
 ## Projeto de MVP
 
-- Mágico de Oz: em um contexto que os consoles de videogames dominam a indústria dos jogos, a vantagem de construir um canal de comuniucação entre publicadoras de jogos e usuários de PC é clara. 
+- Mágico de Oz: em um contexto que os consoles de videogames dominam a indústria dos jogos, a vantagem de construir um canal de comunicação entre publicadoras de jogos e usuários de PC é clara. 
 - Nesse sentido, nosso MVP consiste em um protótipo de aplicação, que, por fachada, jogadores entram para acessar seus jogos comprados ou comprar jogos novos com uma ferramenta de busca, que os leva para um catálogo de jogos e publicadoras. 
 - Contudo, a comunicação necessária desde a requisição de compra de um jogo até o fornecimento do arquivo executável dele será feita manualmente pelos admnistradores do projeto, que entrarão em contato com a publicadora e processarão o pagamento e a entrega do executável do videogame.
 - A proposta futura de nosso produto seria a independência de usuários comprando jogos e publicadoras/desenvolvedoras publicando jogos para serem vendidos na aplicação.
+
+## Backlog do Produto
+
+1. Como administrador quero publicar jogos de empresas para que os usuários possam encontrá-lo na loja
+2. Como administrador quero ter acesso a uma biblioteca com todos os jogos publicados para gerenciá-los
+3. Como empresa quero poder me cadastrar no sistema para criar uma conta
+4. Como empresa quero poder gerenciar a minha conta para visualizar e editar meus dados
+5. Como empresa quero publicar meus jogos para que os usuários possam encontrá-lo na loja
+6. Como empresa quero ter acesso a minha biblioteca de jogos publicados para gerenciá-los
+7. Como usuário quero poder me cadastrar no sistema para criar uma conta
+8. Como usuário quero poder gerenciar a minha conta para visualizar e editar meus dados
+9. Como usuário quero ter acesso a minha biblioteca de jogos comprados para fazer download
+10. Como usuário quero ter acesso a loja de jogos para escolher jogos para comprar
+11. Como usuário quero pesquisar por um jogo pelo nome, empresa ou categoria para visualizá-lo na loja
+
+## Backlog da Sprint
+
+1. Como administrador quero publicar jogos de empresas para que os usuários possam encontrá-lo na loja
+2. Como administrador quero ter acesso a uma biblioteca com todos os jogos publicados para gerenciá-los
+7. Como usuário quero poder me cadastrar no sistema para criar uma conta
+8. Como usuário quero ter acesso a minha biblioteca de jogos comprados para fazer download
+10. Como usuário quero ter acesso a loja de jogos para escolher jogos para comprar
