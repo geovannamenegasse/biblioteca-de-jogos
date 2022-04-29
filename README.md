@@ -40,7 +40,7 @@ Ser um local centralizado para compra, venda e gerenciamento de jogos. Permitind
 4. Como empresa quero poder gerenciar a minha conta para visualizar e editar meus dados
 5. Como empresa quero publicar meus jogos para que os usuários possam encontrá-lo na loja
 6. Como empresa quero ter acesso a minha biblioteca de jogos publicados para gerenciá-los
-7. Como usuário quero poder me cadastrar no sistema para criar uma conta
+7. Como usuário quero poder me cadastrar no sistema para criar uma conta e fazer login
 8. Como usuário quero poder gerenciar a minha conta para visualizar e editar meus dados
 9. Como usuário quero ter acesso a minha biblioteca de jogos comprados para fazer download
 10. Como usuário quero ter acesso a loja de jogos para escolher jogos para comprar
@@ -50,6 +50,35 @@ Ser um local centralizado para compra, venda e gerenciamento de jogos. Permitind
 
 1. Como administrador quero publicar jogos de empresas para que os usuários possam encontrá-lo na loja
 2. Como administrador quero ter acesso a uma biblioteca com todos os jogos publicados para gerenciá-los
-7. Como usuário quero poder me cadastrar no sistema para criar uma conta
-8. Como usuário quero ter acesso a minha biblioteca de jogos comprados para fazer download
+7. Como usuário quero poder me cadastrar no sistema para criar uma conta e fazer login
+8. Como usuário quero poder gerenciar a minha conta para visualizar e editar meus dados
+9. Como usuário quero ter acesso a minha biblioteca de jogos comprados para fazer download
 10. Como usuário quero ter acesso a loja de jogos para escolher jogos para comprar
+
+## Tarefas da Sprint
+
+|Tarefas                                           |Membro    |User Story   |Estado          |
+|------------------------------------------------- |----------|-------------|----------------|
+| Formulário de cadastro de usuário      (front)   |Vitor     |     07      |  Em andamento  |
+| Formulário de cadastro de usuário       (back)   |Rodrigo   |     07      |  Em andamento  |
+| Modelo de usuário                       (back)   |Rodrigo   |     07      |  Em andamento  |
+| Formulário de login                    (front)   |Vitor     |     07      |  Em andamento  |
+| Formulário de login e logout            (back)   |Rodrigo   |     07      |  Em andamento  |
+| Tela de publicação de jogos            (front)   |Vitor     |     01      |  Em andamento  |
+| Publicação de jogos                     (back)   |Vitor     |     01      |  Em andamento  |
+| Modelo de jogo                          (back)   |Rodrigo   |     01      |  Em andamento  |
+| Modal para baixar jogo                 (front)   |Vitor     |     09      |  Em andamento  |
+| Tela de biblioteca de jogos visão adm  (front)   |Geovanna  |     02      |  Em andamento  |
+| Tela de biblioteca de jogos visão user (front)   |Geovanna  |     09      |  Em andamento  |
+| Tela da loja de jogos                  (front)   |Geovanna  |     10      |  Em andamento  |
+| Modal para comprar o jogo              (front)   |Geovanna  |     10      |  Em andamento  |
+| Editar dados de jogo                    (back)   |Rodrigo   |     02      |  Em andamento  |
+| Definir promoção para um jogo           (back)   |Vitor     |     02      |  Em andamento  |
+| Modelo de biblioteca                    (back)   |Rodrigo   |     09      |  Em andamento  |
+| Listar jogos na biblioteca              (back)   |Geovanna  |     09      |  Em andamento  |
+| Pesquisar por um jogo                   (back)   |Vitor     |     10      |  Em andamento  |
+| Editar dados do usuário                 (back)   |Rodrigo   |     08      |  Em andamento  |
+| Excluir minha conta                     (back)   |Rodrigo   |     08      |  Em andamento  |
+| Listar jogos promocionais               (back)   |Geovanna  |     10      |  Em andamento  |
+| Comprar jogo                            (back)   |Geovanna  |     10      |  Em andamento  |
+
