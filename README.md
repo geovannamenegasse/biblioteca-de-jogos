@@ -82,3 +82,19 @@ Ser um local centralizado para compra, venda e gerenciamento de jogos. Permitind
 | Listar jogos promocionais               (back)   |Geovanna  |     10      |  Em andamento  |
 | Comprar jogo                            (back)   |Geovanna  |     10      |  Em andamento  |
 
+## Rodando o projeto
+
+### Api
+
+As instruções aqui são especificamente para a pasta ``/api`` do projeto.
+
+#### Rodando a api
+
+- Será necessário criar um ``.env`` igual o mostrado abaixo, mas com os valores preenchidos.
+
+```
+PORT=<PORT_QUE_A_API_VAI_USAR>
+```
+
+- Rode o comando ``npm run build`` para compilar o typeScript nos arquivos javaScript correspondentes.
+- Rode o comando ``npm run dev`` para rodar a api em um ambiente de desenvolvimento.
