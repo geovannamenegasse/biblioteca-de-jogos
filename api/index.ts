@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
-import ExampleHttpController from '../controllers/http/ExampleController';
+import ExampleHttpController from './controllers/http/ExampleController';
 
 dotenv.config();
 
