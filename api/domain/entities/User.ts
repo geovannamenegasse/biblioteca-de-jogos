@@ -1,12 +1,9 @@
-import Login from '../valueObjects/Login'
-import HashedPassword from '../valueObjects/HashedPassword';
-
 class User
 {
   constructor(
     private _id: number,
-    private _login: Login,
-    private _hashedPassword: HashedPassword
+    private _login: string,
+    private _hashedPassword: string
     )
   {}
 
@@ -17,17 +14,17 @@ class User
     this._id = value;
   }
 
-  public get login(): Login {
+  public get login(): string {
     return this._login;
   }
-  public set login(value: Login) {
+  public set login(value: string) {
     this._login = value;
   }
   
-  public get hashedPassword(): HashedPassword {
+  public get hashedPassword(): string {
     return this._hashedPassword;
   }
-  public set hashedPassword(value: HashedPassword) {
+  public set hashedPassword(value: string) {
     this._hashedPassword = value;
   }
 }

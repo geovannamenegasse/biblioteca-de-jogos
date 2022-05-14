@@ -1,10 +1,21 @@
-import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
-import ExampleHttpController from './controllers/http/ExampleController';
-
 dotenv.config();
 
+import express, { Express, Request, Response } from 'express';
+import ExampleHttpController from './controllers/http/ExampleController';
+import sequelize from './dataSources/sequelize'
+
 const app: Express = express();
+
+
+sequelize.sync().then((sequelize) => {
+  console.log(sequelize);
+},
+(reason) =>{
+  console.log(reason);
+});
+
+
 const port = process.env.PORT;
 
 app.get('/', (req: Request, res: Response) => {
