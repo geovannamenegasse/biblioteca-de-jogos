@@ -9,7 +9,7 @@ const app: Express = express();
 
 
 sequelize.sync().then((sequelize) => {
-  console.log(sequelize);
+  console.log("database connected");
 },
 (reason) =>{
   console.log(reason);
