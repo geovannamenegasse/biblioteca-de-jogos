@@ -1,11 +1,25 @@
+import { Table, Model, Column, CreatedAt, UpdatedAt, AutoIncrement } from 'sequelize-typescript'
 
-class UserModel
+@Table({
+  tableName: "User"
+})
+class UserModel extends Model
 {
+  @AutoIncrement
+  @Column({primaryKey: true})
   public id!: number;
+
+  @Column
   public login!: string;
+  
+  @Column
   public password!: string;
 
-  // timestamps!
+  @CreatedAt
   public readonly createdAt!: Date;
+
+  @UpdatedAt
   public readonly updatedAt!: Date;
 }
+
+export default UserModel;
