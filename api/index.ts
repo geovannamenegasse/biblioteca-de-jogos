@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+
 dotenv.config();
 
 import express, { Express, Request, Response } from 'express';
@@ -19,7 +20,7 @@ sequelize.sync().then((sequelize) => {
 const port = process.env.PORT;
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Express + TypeScript Server with mooooore TypeScripts hexagonal');
+  res.send(`Express + TypeScript Server with mooooore TypeScripts hexagonal`);
 });
 
 app.use('/example', ExampleHttpController);

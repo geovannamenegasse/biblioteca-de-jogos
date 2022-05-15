@@ -1,30 +1,43 @@
+import { AutoMap } from '@automapper/classes';
+
 class User
 {
-  constructor(
-    private _id: number,
-    private _login: string,
-    private _hashedPassword: string
-    )
-  {}
+  @AutoMap()
+  private Id!: number
+
+  @AutoMap()
+  private Login!: string
+
+  @AutoMap()
+  private HashedPassword!: string
+
+  constructor(id: number, login: string, hashedPassword: string)
+  {
+    this.id = id;
+    this.login = login;
+    this.hashedPassword = hashedPassword;
+  }
 
   public get id(): number {
-    return this._id;
+    return this.Id;
   }
   public set id(value: number) {
-    this._id = value;
+    this.Id = value;
   }
 
   public get login(): string {
-    return this._login;
+    return this.Login;
   }
   public set login(value: string) {
-    this._login = value;
+    this.Login = value;
   }
   
   public get hashedPassword(): string {
-    return this._hashedPassword;
+    return this.HashedPassword;
   }
   public set hashedPassword(value: string) {
-    this._hashedPassword = value;
+    this.HashedPassword = value;
   }
 }
+
+export default User;
