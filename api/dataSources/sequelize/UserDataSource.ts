@@ -12,17 +12,17 @@ class UserDataSource implements UserRepository {
   async insert(user: User): Promise<void> {
     var userModel = userMapper.map(user, User, UserModel);
 
-    if (userModel.isNewRecord)
-      await userModel.save();
+    var {id, ...attributes} = userModel.get();
+
+    await userModel.update({...attributes});
   }
 
   async update(updatedUser: User): Promise<void> {
     var userModel = userMapper.map(updatedUser, User, UserModel);
-    
-    if (userModel.isNewRecord)
-      return;
-    
-    await userModel.save();
+
+    var {id, ...attributes} = userModel.get();
+
+    await UserModel.update({...attributes}, {where: {id: userModel.id}});
   }
 }
 

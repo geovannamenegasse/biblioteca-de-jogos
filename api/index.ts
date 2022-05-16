@@ -24,14 +24,25 @@ sequelize.sync({alter: false}).then((sequelize) => {
 const port = process.env.PORT;
 
 app.get('/', (req: Request, res: Response) => {
-  userRepository.insert(new User(10, "vitor", "1234")).then(
-    () => {
-      console.log("insert sucessful");
+  userRepository.getBy(1).then(
+    (user) => {
+      console.log(user);
+      user.login = "vitor atualizado";
+      userRepository.update(user).then(
+        () => console.log("update sucessful"),
+        (reason) => console.log(reason) 
+      );
     },
-    (reason) => {
-      console.log(reason);
-    }
+    (reason) => console.log(reason)
   );
+  // userRepository.insert(new User(10, "vitor", "1234")).then(
+  //   () => {
+  //     console.log("insert sucessful");
+  //   },
+  //   (reason) => {
+  //     console.log(reason);
+  //   }
+  // );
 
   res.send(`Express + TypeScript Server with mooooore TypeScripts hexagonal`);
 });

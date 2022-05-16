@@ -21,7 +21,6 @@ createMap(userMapper, User, UserModel,
     (destination) => destination.password,
     mapFrom((source) => source.hashedPassword)
   ),
-  forMember((destination) => destination.id, ignore()),
   namingConventions(new PascalCaseNamingConvention())
 );
 
