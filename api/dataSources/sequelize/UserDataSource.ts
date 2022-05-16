@@ -2,6 +2,7 @@ import User from "../../domain/entities/User";
 import UserModel from "./models/UserModel";
 import UserRepository from "../../domain/repositories/UserRepository";
 import userMapper from "./mappers/UserMapper";
+import sequelize from './';
 
 class UserDataSource implements UserRepository {
   async getBy(id: number) : Promise<User> {
@@ -10,7 +11,7 @@ class UserDataSource implements UserRepository {
   
   async insert(user: User): Promise<void> {
     var userModel = userMapper.map(user, User, UserModel);
-    
+
     if (userModel.isNewRecord)
       await userModel.save();
   }
@@ -24,3 +25,5 @@ class UserDataSource implements UserRepository {
     await userModel.save();
   }
 }
+
+export default UserDataSource;

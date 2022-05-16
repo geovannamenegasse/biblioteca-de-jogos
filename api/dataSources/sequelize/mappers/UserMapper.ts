@@ -1,10 +1,11 @@
-import { createMapper, createMap, forMember, mapFrom, PascalCaseNamingConvention, namingConventions, CamelCaseNamingConvention } from '@automapper/core';
+import { createMapper, createMap, forMember, mapFrom, PascalCaseNamingConvention, namingConventions, CamelCaseNamingConvention, ignore, fromValue, constructUsing, convertUsing, afterMap } from '@automapper/core';
 import { sequelize } from '@automapper/sequelize';
 import UserModel from '../models/UserModel';
 import User from '../../../domain/entities/User';
+import { classes } from '@automapper/classes';
 
 const userMapper = createMapper({
-  strategyInitializer: sequelize()
+  strategyInitializer: classes()
 });
 
 createMap(userMapper, UserModel, User,
@@ -20,6 +21,7 @@ createMap(userMapper, User, UserModel,
     (destination) => destination.password,
     mapFrom((source) => source.hashedPassword)
   ),
+  forMember((destination) => destination.id, ignore()),
   namingConventions(new PascalCaseNamingConvention())
 );
 
