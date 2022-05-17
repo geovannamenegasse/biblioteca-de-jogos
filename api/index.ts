@@ -5,13 +5,8 @@ dotenv.config();
 import express, { Express, Request, Response } from 'express';
 import ExampleHttpController from './controllers/http/ExampleController';
 import sequelize from './dataSources/sequelize';
-import UserDataSource from './dataSources/sequelize/UserDataSource';
-import User from './domain/entities/User';
-import UserRepository from './domain/repositories/UserRepository';
 
 const app: Express = express();
-
-const userRepository: UserRepository = new UserDataSource();
 
 sequelize.sync({alter: false}).then((sequelize) => {
   console.log("database connected");
@@ -24,26 +19,6 @@ sequelize.sync({alter: false}).then((sequelize) => {
 const port = process.env.PORT;
 
 app.get('/', (req: Request, res: Response) => {
-  userRepository.getBy(1).then(
-    (user) => {
-      console.log(user);
-      user.login = "vitor atualizado";
-      userRepository.update(user).then(
-        () => console.log("update sucessful"),
-        (reason) => console.log(reason) 
-      );
-    },
-    (reason) => console.log(reason)
-  );
-  // userRepository.insert(new User(10, "vitor", "1234")).then(
-  //   () => {
-  //     console.log("insert sucessful");
-  //   },
-  //   (reason) => {
-  //     console.log(reason);
-  //   }
-  // );
-
   res.send(`Express + TypeScript Server with mooooore TypeScripts hexagonal`);
 });
 

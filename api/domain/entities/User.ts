@@ -3,7 +3,7 @@ import { AutoMap } from '@automapper/classes';
 class User
 {
   @AutoMap()
-  private Id!: number
+  private Id: number | undefined
 
   @AutoMap()
   private Login!: string
@@ -11,17 +11,17 @@ class User
   @AutoMap()
   private HashedPassword!: string
 
-  constructor(id: number, login: string, hashedPassword: string)
+  constructor(id: number | undefined, login: string, hashedPassword: string)
   {
     this.id = id;
     this.login = login;
     this.hashedPassword = hashedPassword;
   }
 
-  public get id(): number {
+  public get id(): number | undefined {
     return this.Id;
   }
-  public set id(value: number) {
+  public set id(value: number | undefined) {
     this.Id = value;
   }
 
