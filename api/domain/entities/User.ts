@@ -11,7 +11,7 @@ class User
   @AutoMap()
   private HashedPassword!: string
 
-  constructor(id: number | undefined, login: string, hashedPassword: string)
+  constructor(id: number | undefined = undefined, login: string = '', hashedPassword: string = '')
   {
     this.id = id;
     this.login = login;
