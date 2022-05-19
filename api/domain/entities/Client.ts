@@ -1,4 +1,5 @@
 import { AutoMap } from '@automapper/classes';
+import User from './User';
 
 class Client
 {
@@ -8,10 +9,14 @@ class Client
   @AutoMap()
   private Name!: string;
 
-  constructor(id: number | undefined = undefined, name: string = '')
+  @AutoMap(() => User)
+  private User!: User;
+
+  constructor(id: number | undefined = undefined, name: string = '', user: User = new User())
   {
-    this.id = id;
-    this.name = name;
+    this.id       = id;
+    this.name     = name;
+    this.userData = user;
   }
 
   public get id(): number | undefined {
@@ -26,6 +31,13 @@ class Client
   }
   public set name(value: string) {
     this.Name = value;
+  }
+
+  public get userData(): User {
+    return this.User;
+  }
+  public set userData(value: User) {
+    this.User = value;
   }
 }
 
