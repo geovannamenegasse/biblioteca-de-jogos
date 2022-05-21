@@ -2,10 +2,11 @@ import Client from "../../domain/entities/Client";
 import ClientRepository from "../../domain/repositories/ClientRepository";
 import clientMapper from "./mappers/ClientMapper";
 import ClientModel from "./models/ClientModel";
+import UserModel from "./models/UserModel";
 
 class ClientDataSource implements ClientRepository {
     async getBy(id: number): Promise<Client> {
-        return clientMapper.map(await ClientModel.findByPk(id), ClientModel, Client);
+        return clientMapper.map(await ClientModel.findByPk(id, {include: [UserModel]}), ClientModel, Client);
     }
 
     async insert(client: Client): Promise<Client> {
