@@ -8,20 +8,22 @@ class UserDataSource implements UserRepository {
     return userMapper.map(await UserModel.findByPk(id), UserModel, User);
   }
   
-  async insert(user: User): Promise<void> {
+  async insert(user: User): Promise<User> {
     var userModel = userMapper.map(user, User, UserModel);
 
-    var {id, ...modelAttributesWithoutId} = userModel.get();
-
-    await userModel.update({...modelAttributesWithoutId});
+    var {id, ...attributes} = userModel.get();
+    
+    return userMapper.map(await userModel.update({...attributes}), UserModel, User);
   }
 
-  async update(updatedUser: User): Promise<void> {
-    var userModel = userMapper.map(updatedUser, User, UserModel);
+  async update(user: User): Promise<number | undefined> {
+    var userModel = userMapper.map(user, User, UserModel);
 
-    var {id, ...modelAttributesWithoutId} = userModel.get();
+    var {id, ...attributes} = userModel.get();
 
-    await UserModel.update({...modelAttributesWithoutId}, {where: {id: id}});
+    var updatedCount = await UserModel.update({...attributes}, {where: {id: id}});
+    
+    return updatedCount.shift();
   }
 }
 

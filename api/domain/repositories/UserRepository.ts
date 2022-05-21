@@ -3,9 +3,9 @@ import User from "../entities/User";
 interface UserRepository {
     getBy(id: number) : Promise<User>;
 
-    insert(user: User) : Promise<void>;
+    insert(user: User) : Promise<User>;
 
-    update(updatedUser: User) : Promise<void>;
+    update(user: User) : Promise<number | undefined>;
 }
 
 export default UserRepository;

@@ -3,9 +3,9 @@ import Client from "../entities/Client";
 interface ClientRepository {
     getBy(id: number) : Promise<Client>;
 
-    insert(client: Client) : Promise<void>;
+    insert(client: Client) : Promise<Client>;
 
-    update(updatedClient: Client) : Promise<void>;
+    update(client: Client) : Promise<Client>;
 }
 
 export default ClientRepository;

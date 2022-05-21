@@ -1,5 +1,4 @@
-import { createMapper, createMap, forMember, mapFrom, PascalCaseNamingConvention, namingConventions, CamelCaseNamingConvention, ignore, fromValue, constructUsing, convertUsing, afterMap } from '@automapper/core';
-import { sequelize } from '@automapper/sequelize';
+import { createMapper, createMap, forMember, mapFrom, PascalCaseNamingConvention, namingConventions, CamelCaseNamingConvention} from '@automapper/core';
 import UserModel from '../models/UserModel';
 import User from '../../../domain/entities/User';
 import { classes } from '@automapper/classes';
