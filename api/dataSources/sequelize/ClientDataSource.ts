@@ -11,7 +11,7 @@ class ClientDataSource implements ClientRepository {
     async insert(client: Client): Promise<Client> {
         var clientModel = clientMapper.map(client, Client, ClientModel);
 
-        var {id, ...attributes} = clientModel.get();
+        var {id, user, ...attributes} = clientModel.get();
 
         return clientMapper.map(await clientModel.update({...attributes}), ClientModel, Client);
     }
