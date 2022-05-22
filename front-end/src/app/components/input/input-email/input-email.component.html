@@ -1,0 +1,28 @@
+<div class="col-12">
+    <label 
+      [for]="id" 
+      class="form-label"
+    >
+      {{ label }}
+    </label>
+    <input 
+      type="email"
+      class="form-control shadow-sm" 
+      [id]="id" 
+      [placeholder]="placeholder"
+      [disabled]="disabled"
+      [required]="required"
+      [(ngModel)]="value"
+      (focus)="onFocus()"
+      (focusout)="onFocusOut()"
+      (blur)="onTouched && onTouched()"
+    >
+    <div 
+      class="valid-feedback"
+    >
+      Looks good!
+    </div>
+</div>
+  
+  
+  
