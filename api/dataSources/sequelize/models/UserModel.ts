@@ -20,20 +20,6 @@ class UserModel extends Model<UserAttributes, UserCreationAttributes>
   @Column
   @AutoMap()
   public login!: string;
-
-  @Column({
-    primaryKey: true,
-    autoIncrement: true,
-    allowNull: false,
-    set(this: UserModel, val: any){
-      if(val == {})
-        this.setDataValue("id", 0);
-      else
-        this.setDataValue("id", val);
-    }
-  })
-  @AutoMap()
-  public id!: number
   
   @Column
   @AutoMap()

@@ -17,26 +17,12 @@ interface ClientCreationAttributes extends Optional<ClientAttributes, 'id'> {}
   tableName: "Client"
 })
 class ClientModel extends Model<ClientAttributes, ClientCreationAttributes>
-{
-  @Column({
-    primaryKey: true,
-    autoIncrement: true,
-    allowNull: false,
-    set(this: ClientModel, val: any){
-      if(val == {})
-        this.setDataValue("id", 0);
-      else
-        this.setDataValue("id", val);
-    }
-  })
-  @AutoMap()
-  public id!: number
-  
+{ 
   @Column
   @AutoMap()
   public name!: string;
 
-  @BelongsTo(() => UserModel, "userId")
+  @BelongsTo(() => UserModel, {foreignKey:{name: "userId", allowNull: false}})
   @AutoMap()
   public user!: UserModel;
 

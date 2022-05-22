@@ -1,11 +1,11 @@
-import User from "../entities/User";
+import Client from "../entities/Client";
 
 interface UserRepository {
-    getBy(id: number) : Promise<User>;
+    getClientBy(id: number) : Promise<Client>;
 
-    insert(user: User) : Promise<User>;
+    insert(client: Client) : Promise<Client>;
 
-    update(user: User) : Promise<number | undefined>;
+    update(client: Client) : Promise<Client>;
 }
 
 export default UserRepository;

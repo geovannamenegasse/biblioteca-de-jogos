@@ -16,7 +16,7 @@ class Client
   {
     this.id       = id;
     this.name     = name;
-    this.userData = user;
+    this.user = user;
   }
 
   public get id(): number | undefined {
@@ -33,10 +33,10 @@ class Client
     this.Name = value;
   }
 
-  public get userData(): User {
+  public get user(): User {
     return this.User;
   }
-  public set userData(value: User) {
+  public set user(value: User) {
     this.User = value;
   }
 }

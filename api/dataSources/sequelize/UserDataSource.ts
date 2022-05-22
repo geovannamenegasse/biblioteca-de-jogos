@@ -1,30 +1,41 @@
-import User from "../../domain/entities/User";
-import UserModel from "./models/UserModel";
+import { Model } from "sequelize-typescript";
+import Client from "../../domain/entities/Client";
 import UserRepository from "../../domain/repositories/UserRepository";
-import userMapper from "./mappers/UserMapper";
+import clientMapper from "./mappers/ClientMapper";
+import ClientModel from "./models/ClientModel";
+import UserModel from "./models/UserModel";
 
 class UserDataSource implements UserRepository {
-  async getBy(id: number) : Promise<User> {
-    return userMapper.map(await UserModel.findByPk(id), UserModel, User);
-  }
-  
-  async insert(user: User): Promise<User> {
-    var userModel = userMapper.map(user, User, UserModel);
+    async getClientBy(id: number): Promise<Client> {
+        return clientMapper.map(await ClientModel.findByPk(id, {include: [UserModel]}), ClientModel, Client);
+    }
 
-    var {id, ...attributes} = userModel.get();
+    async insert(client: Client): Promise<Client> {
+        var clientModel = clientMapper.map(client, Client, ClientModel);
+
+        clientModel.user = await clientModel.$create("user", clientModel.user.get());
+        await clientModel.save();
+
+        return clientMapper.map(clientModel, ClientModel, Client);
+    }
+
+    async update(client: Client): Promise<Client> {
+        var clientModel = clientMapper.map(client, Client, ClientModel);
+
+        this.setupModelUpdate(clientModel, client.id);
+        this.setupModelUpdate(clientModel.user, client.user.id);
+
+        await clientModel.user.save();
+        await clientModel.save();
     
-    return userMapper.map(await userModel.update({...attributes}), UserModel, User);
-  }
+        return clientMapper.map(clientModel, ClientModel, Client);
+    }
 
-  async update(user: User): Promise<number | undefined> {
-    var userModel = userMapper.map(user, User, UserModel);
 
-    var {id, ...attributes} = userModel.get();
-
-    var updatedCount = await UserModel.update({...attributes}, {where: {id: id}});
-    
-    return updatedCount.shift();
-  }
+    private setupModelUpdate(model: Model<any, any>, id: number | undefined) {
+        model.isNewRecord = false;
+        model.id = id;
+    }
 }
 
 export default UserDataSource;
