@@ -96,3 +96,11 @@ PORT=<PORT_QUE_A_API_VAI_USAR>
 
 - Rode o comando ``npm run build`` para compilar o typeScript nos arquivos javaScript correspondentes.
 - Rode o comando ``npm run dev`` para rodar a api em um ambiente de desenvolvimento.
+
+### Front-end
+
+As instruções aqui são especificamente para a pasta ``/front-end`` do projeto.
+
+#### Rodando o front-end
+
+- Rode o comando ``ng serve``.
