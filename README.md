@@ -60,7 +60,7 @@ Ser um local centralizado para compra, venda e gerenciamento de jogos. Permitind
 |Tarefas                                           |Membro    |User Story   |Estado          |
 |------------------------------------------------- |----------|-------------|----------------|
 | Formulário de cadastro de usuário      (front)   |Vitor     |     07      |  Em andamento  |
-| Formulário de cadastro de usuário       (back)   |Vitor     |     07      |  Em andamento  |
+| Formulário de cadastro de usuário       (back)   |Vitor     |     07      |  Concluído     |
 | Modelo de usuário                       (back)   |Vitor     |     07      |  Concluído     |
 | Formulário de login e logout           (front)   |Vitor     |     07      |  Concluído     |
 | Formulário de login e logout            (back)   |Vitor     |     07      |  Em andamento  |

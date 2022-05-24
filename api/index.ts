@@ -45,6 +45,9 @@ app.get('/', (req: Request, res: Response) => {
   res.send(`Express + TypeScript Server with mooooore TypeScripts hexagonal`);
 });
 
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+
 app.use('/example', ExampleHttpController);
 app.use('/client', ClientCreationController);
 
