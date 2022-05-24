@@ -9,6 +9,7 @@ import UserRepository from './domain/repositories/UserRepository';
 import Client from './domain/entities/Client';
 import User from './domain/entities/User';
 import UserDataSource from './dataSources/sequelize/UserDataSource';
+import ClientCreationController from './controllers/http/client/ClientCreationController';
 
 const app: Express = express();
 
@@ -45,6 +46,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.use('/example', ExampleHttpController);
+app.use('/client', ClientCreationController);
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
