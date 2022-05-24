@@ -86,12 +86,20 @@ Ser um local centralizado para compra, venda e gerenciamento de jogos. Permitind
 
 As instruções aqui são especificamente para a pasta ``/api`` do projeto.
 
+#### Instalando dependências
+
+- Rode o comando ``npm install`` para instalar as dependências do projeto.
+
 #### Rodando a api
 
 - Será necessário criar um ``.env`` igual o mostrado abaixo, mas com os valores preenchidos.
 
 ```
 PORT=<PORT_QUE_A_API_VAI_USAR>
+DB_NAME=<NOME_DO_BANCO_DE_DADOS>
+DB_USER=<NOME_DO_USUARIO_QUE_VAI_ACESSAR_O_BANCO_DE_DADOS>
+DB_HOST=localhost
+DB_PASSWORD=<SENHA_DO_USUARIO_QUE_VAI_ACESSAR_O_BANCO_DE_DADOS>
 ```
 
 - Rode o comando ``npm run build`` para compilar o typeScript nos arquivos javaScript correspondentes.
@@ -100,6 +108,11 @@ PORT=<PORT_QUE_A_API_VAI_USAR>
 ### Front-end
 
 As instruções aqui são especificamente para a pasta ``/front-end`` do projeto.
+
+#### Instalando dependências
+
+- Instale o angular CLI com o comando ``npm install -g @angular/cli``.
+- Rode o comando ``npm install`` para instalar as demais dependências do projeto.
 
 #### Rodando o front-end
 
