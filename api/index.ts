@@ -6,6 +6,8 @@ import express, { Express, Request, Response } from 'express';
 import ExampleHttpController from './controllers/http/ExampleController';
 import sequelize from './dataSources/sequelize';
 import ClientCreationController from './controllers/http/client/ClientCreationController';
+import cors from 'cors';
+import helmet from 'helmet'
 
 const app: Express = express();
 
@@ -23,6 +25,8 @@ app.get('/', (req: Request, res: Response) => {
   res.send(`Express + TypeScript Server with mooooore TypeScripts hexagonal`);
 });
 
+app.use(cors());
+app.use(helmet());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
