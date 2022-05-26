@@ -1,7 +1,7 @@
 <div class="container">
     <div class="d-flex flex-wrap">
         <app-card-jogo 
-            *ngFor="let jogo of jogos" 
+            *ngFor="let jogo of jogos$ | async" 
             [title]="jogo.nome"
             [routerLink]="['/jogo', jogo.id]">{{jogo.nome}}<br>
         </app-card-jogo>
