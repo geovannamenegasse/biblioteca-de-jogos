@@ -100,6 +100,7 @@ DB_NAME=<NOME_DO_BANCO_DE_DADOS>
 DB_USER=<NOME_DO_USUARIO_QUE_VAI_ACESSAR_O_BANCO_DE_DADOS>
 DB_HOST=localhost
 DB_PASSWORD=<SENHA_DO_USUARIO_QUE_VAI_ACESSAR_O_BANCO_DE_DADOS>
+JWT_SECRET=<STRING_QUALQUER_PARA_SER_O_SEGREDO_DO_JWT>
 ```
 
 - Rode o comando ``npm run build`` para compilar o typeScript nos arquivos javaScript correspondentes.

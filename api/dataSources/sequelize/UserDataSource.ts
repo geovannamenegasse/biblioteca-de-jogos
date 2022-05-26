@@ -10,6 +10,16 @@ class UserDataSource implements UserRepository {
         return clientMapper.map(await ClientModel.findByPk(id, {include: [UserModel]}), ClientModel, Client);
     }
 
+    async getClientByLogin(login: string): Promise<Client> {
+        return clientMapper.map(await ClientModel.findOne({
+            include: [{
+                model: UserModel,
+                where: {login: login}
+            }]
+        }), 
+        ClientModel, Client);
+    }
+
     async insert(client: Client): Promise<Client> {
         var clientModel = clientMapper.map(client, Client, ClientModel);
 
