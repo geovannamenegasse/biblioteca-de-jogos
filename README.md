@@ -65,7 +65,7 @@ Ser um local centralizado para compra, venda e gerenciamento de jogos. Permitind
 | Formulário de login e logout           (front)   |Vitor     |     07      |  Concluído     |
 | Formulário de login e logout            (back)   |Vitor     |     07      |  Em andamento  |
 | Formulário de publicação de jogos      (front)   |Geovanna  |     01      |  Em andamento  |
-| Formulário de publicação de jogos       (back)   |Rodrigo   |     01      |  Em andamento  |
+| Formulário de publicação de jogos       (back)   |Rodrigo   |     01      |  Em aprovação  |
 | Modelo de jogo                          (back)   |Vitor     |     01      |  Concluído     |
 | Editar dados de jogo                   (front)   |Geovanna  |     02      |  Em andamento  |
 | Editar dados de jogo                    (back)   |Rodrigo   |     02      |  Em andamento  |
