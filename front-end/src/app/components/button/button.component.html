@@ -1,5 +1,7 @@
 <button
-    class="col-12 btn shadow-lg rounded"
+    class="btn shadow-lg rounded"
+    [class.col-12] = "size === 'col-12'"
+    [class.col-6] = "size === 'col-6'"
     [type]="type"
     [class.btn-primary] = "color === 'primary'"
     [class.btn-secondary] = "color === 'secondary'"

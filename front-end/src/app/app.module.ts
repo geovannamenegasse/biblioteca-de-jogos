@@ -18,7 +18,7 @@ import { CardJogoComponent } from './components/card/card-jogo/card-jogo.compone
 import { ModalComponent } from './components/modal/modal.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ContaClienteComponent } from './pages/cliente/conta-cliente/conta-cliente.component';
-import { LojaComponent } from './pages/loja/loja.component';
+import { LojaComponent } from './pages/jogo/loja/loja.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -31,7 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     CardJogoComponent,
     ModalComponent,
-    LoginComponent, 
+    LoginComponent,
     ContaClienteComponent,
     LojaComponent,
   ],

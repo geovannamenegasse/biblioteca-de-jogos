@@ -4,6 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { CadastroJogoComponent } from './cadastro-jogo.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgxMatFileInputModule } from '@angular-material-components/file-input';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     MatInputModule,
     ReactiveFormsModule,
-    ButtonModule
+    ButtonModule,
+    NgxMatFileInputModule
   ]
 })
 export class CadastroJogoModule { }

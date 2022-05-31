@@ -12,11 +12,13 @@ export class CadastroJogoComponent implements OnInit {
   form: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-              private service: JogoService) 
+              private service: JogoService)
   {
     this.form = this.formBuilder.group({
       name: [null],
-      genre: [null]
+      genre: [null],
+      description: [null],
+      image: [null]
     });
   }
 
@@ -24,7 +26,7 @@ export class CadastroJogoComponent implements OnInit {
   }
 
   onSubmit(){
-    this.service.insertJogo(this.form.value).subscribe(result => console.log(result), 
+    this.service.insertJogo(this.form.value).subscribe(result => console.log(result),
     error => this.onError());
   }
 

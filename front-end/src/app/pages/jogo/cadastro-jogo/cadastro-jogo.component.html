@@ -1,5 +1,5 @@
-<div class="container col-lg-9 col-md-9 col-sm-12 shadow-lg p-5 d-flex justify-content-center">
-  
+<div class="container col-lg-7 col-md-7 col-sm-12 shadow-lg p-5 d-flex justify-content-center">
+
   <form [formGroup]="form" class="full-width">
     <div class="row">
       <div class="col-6">
@@ -8,12 +8,14 @@
         </label>
         <input type="text" class="form-control shadow bg-body rounded" matInput placeholder="Insira seu nome" formControlName="name" required="true"/>
       </div>
-    
+
       <div class="col-6">
         <label class="form-label">
-          Nome
+          Imagem
         </label>
-        <input type="text" class="form-control shadow bg-body rounded" matInput placeholder="Insira seu nome" formControlName="name" required="true"/>
+        <input accept="image/*" class="form-control shadow bg-body rounded" type="file" id="formFile"
+        onchange="document.getElementById('game-image').src = window.URL.createObjectURL(this.files[0])">
+        <!-- <input type="file" class="form-control shadow bg-body rounded" matInput placeholder="Insira seu nome" formControlName="name" required="true"/> -->
       </div>
     </div>
 
@@ -22,12 +24,13 @@
     <div class="row">
       <div class="col-6">
         <label class="form-label">
-          Nome do jogo
+          Categoria
         </label>
-        <input type="text" class="form-control shadow bg-body rounded" matInput placeholder="Insira seu nome" formControlName="name" required="true"/>
+        <input type="text" class="form-control shadow bg-body rounded" matInput placeholder="Insira a categoria" formControlName="genre" required="true"/>
       </div>
-     
-      <div class="col-6">
+
+      <div class="col-6" style="position: absolute; padding-left: 350px;">
+        <img id="game-image" alt="your image" width="200" height="200" />
       </div>
     </div>
 
@@ -36,12 +39,13 @@
     <div class="row">
       <div class="col-6">
         <label class="form-label">
-          Nome do jogo
+          Descrição
         </label>
-        <textarea rows="3" class="form-control shadow bg-body rounded" matInput placeholder="Insira seu nome" formControlName="name" required="true"></textarea>
+        <textarea rows="3" class="form-control shadow bg-body rounded" matInput placeholder="Insira a descrição" formControlName="description" required="true"></textarea>
       </div>
-     
-      <div class="col-6">
+
+      <div class="col-6" style="position: relative;">
+
       </div>
     </div>
 
@@ -52,12 +56,14 @@
           title="Salvar"
           type="submit"
           color="primary"
+          size="col-6"
           (click)="onSubmit()"
-      ></app-button>    
+      ></app-button>
       <app-button
           title="Cancelar"
           type="button"
           color="light"
+          size="col-6"
       ></app-button>
     </div>
   </form>

@@ -1,11 +1,5 @@
-<!-- <div class="container col-lg-5 col-md-5 col-sm-12 shadow-lg p-5 d-flex justify-content-center">
-  <div class="col-9">
-    <app-form-cadastro-cliente></app-form-cadastro-cliente>
-  </div>
-</div> -->
-
 <div class="container col-lg-5 col-md-5 col-sm-12 shadow-lg p-5 d-flex justify-content-center">
-  
+
   <form [formGroup]="form" class="full-width">
     <div class="text-center row">
       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-joystick" viewBox="0 0 16 16">
@@ -44,13 +38,13 @@
           (click)="onSubmit()"
       ></app-button>
     </div>
-    
+
     <div class="row text-center mt-3">
       <a routerLink="/login" class="link-primary">
           Já tem uma conta? Faça login
       </a>
     </div>
   </form>
-  
+
 
 </div>

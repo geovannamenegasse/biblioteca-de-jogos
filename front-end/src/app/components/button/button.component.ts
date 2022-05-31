@@ -13,6 +13,8 @@ export class ButtonComponent implements OnInit {
   public type: string = "button";
   @Input()
   public color: string = 'secondary';
+  @Input()
+  public size: string = 'col-12';
 
   constructor() { }
 
