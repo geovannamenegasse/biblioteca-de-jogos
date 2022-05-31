@@ -1,4 +1,4 @@
-import { Table, Model, Column, CreatedAt, UpdatedAt, AutoIncrement, PrimaryKey, DataType, AllowNull } from 'sequelize-typescript'
+import { Table, Model, Column, CreatedAt, UpdatedAt } from 'sequelize-typescript'
 import { AutoMap } from '@automapper/classes';
 import { Optional } from 'sequelize/types';
 
