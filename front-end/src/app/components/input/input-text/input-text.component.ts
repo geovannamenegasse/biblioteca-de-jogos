@@ -1,11 +1,19 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, Inject, Injector, INJECTOR, Input, OnInit } from '@angular/core';
+import { NgControl, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-input-text',
   templateUrl: './input-text.component.html',
-  styleUrls: ['./input-text.component.css']
+  styleUrls: ['./input-text.component.css'],
+  providers: [
+    { 
+      provide: NG_VALUE_ACCESSOR,
+      multi: true,
+      useExisting: forwardRef(() => InputTextComponent),
+    }
+  ]
 })
-export class InputTextComponent implements OnInit {
+export class InputTextComponent implements OnInit, ControlValueAccessor {
 
   @Input()
   public id: string = '';
@@ -22,10 +30,24 @@ export class InputTextComponent implements OnInit {
 
   public focus: boolean = false;
   public valid: boolean = false;
+  public control: NgControl;
 
-  constructor() { }
+  constructor(@Inject(INJECTOR) private injector: Injector) { 
+    this.control = this.injector.get(NgControl);
+  }
+  writeValue(obj: any): void {
+    throw new Error('Method not implemented.');
+  }
+  registerOnChange(fn: any): void {
+    throw new Error('Method not implemented.');
+  }
+  registerOnTouched(fn: any): void {
+    throw new Error('Method not implemented.');
+  }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    // this.control = this.injector.get(NgControl);
+  }
 
   public set value(value: string){
     this.textvalue = value;

@@ -1,3 +1,5 @@
+import { ClienteModule } from './pages/cliente/cliente.module';
+import { CadastroClienteModule } from './pages/cliente/cadastro-cliente/cadastro-cliente.module';
 import { ButtonModule } from './components/button/button.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -31,10 +33,9 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     CardJogoComponent,
     ModalComponent,
-    LoginComponent,
-    CadastroClienteComponent,
-    CadastroJogoComponent,
+    LoginComponent, 
     ContaClienteComponent,
+    CadastroJogoComponent,
     LojaComponent,
   ],
   imports: [
@@ -44,7 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
     InputModule,
     FormModule,
     ButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    ClienteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

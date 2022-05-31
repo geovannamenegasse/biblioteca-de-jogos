@@ -1,1 +1,16 @@
-<p>cadastro-cliente works!</p>
+<!-- <div class="container col-lg-5 col-md-5 col-sm-12 shadow-lg p-5 d-flex justify-content-center">
+  <div class="col-9">
+    <app-form-cadastro-cliente></app-form-cadastro-cliente>
+  </div>
+</div> -->
+
+<div class="container col-lg-5 col-md-5 col-sm-12 shadow-lg p-5 d-flex justify-content-center">
+  <div class="col-9">
+  <form [formGroup]="form" class="full-width">
+    <input matInput placeholder="Nome" formControlName="name"/>
+    <input matInput placeholder="Login" formControlName="login"/>
+    <input matInput placeholder="Senha" formControlName="password"/>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+  </form>
+  </div>
+</div>

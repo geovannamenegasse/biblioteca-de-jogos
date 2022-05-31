@@ -1,4 +1,4 @@
-
+<div class="col-12">
   <label
     [for]="id"
     class="form-label"
@@ -6,8 +6,8 @@
     {{ label }}
   </label>
   <input
-    type="text"
-    class="form-control"
+    type="file"
+    class="form-control shadow-sm"
     [id]="id"
     [placeholder]="placeholder"
     [disabled]="disabled"
@@ -17,14 +17,6 @@
     (focusout)="onFocusOut()"
     (blur)="onTouched && onTouched()"
   >
-  <div
-    class="valid-feedback"
-  >
-    Looks good!
-  </div>
-  <div class="invalid-feedback">
-    Please choose a username.
-  </div>
-
+</div>
 
 

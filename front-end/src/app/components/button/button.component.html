@@ -1,7 +1,8 @@
-<button 
+<button
     class="col-12 shadow-sm btn"
-    [type]="type" 
+    [type]="type"
     [class.btn-primary] = "color === 'primary'"
+    [class.btn-secondary] = "color === 'secondary'"
 >
     {{ title }}
 </button>

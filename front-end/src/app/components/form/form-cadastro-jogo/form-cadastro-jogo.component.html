@@ -1,0 +1,79 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-6">
+      <app-input-text
+          id="game-name"
+          label="Nome do jogo"
+          placeholder="Insira o nome do jogo"
+          [disabled]="false"
+          [required]="true"
+          formControlName="nomeJogo"
+      ></app-input-text>
+    </div>
+    <div class="col-6">
+      <app-input-file
+          (change)="imagePreview($event)"
+          id="game-image-url"
+          label="URL da imagem"
+          [disabled]="false"
+          [required]="true"
+          formControlName="img"
+      ></app-input-file>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-6">
+      <app-input-text
+          id="game-category"
+          label="Categoria"
+          placeholder="Insira a categoria"
+          [disabled]="false"
+          [required]="true"
+          formControlName="categoria"
+      ></app-input-text>
+    </div>
+    <div class="col-6">
+      <!-- <app-input-text
+          id="text"
+          placeholder="imagem"
+          [disabled]="false"
+          [required]="true"
+      ></app-input-text> -->
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-6">
+      <app-input-textarea
+          id="game-description"
+          label="Descrição"
+          placeholder="Insira a descrição do jogo"
+          [disabled]="false"
+          [required]="true"
+          formControlName="descricao"
+      ></app-input-textarea>
+    </div>
+    <div class="col-6 text-center" *ngIf="filePath && filePath !== ''">
+        <img id="game-image" [src]="filePath" class="rounded" width="100" height="100">
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+      <app-button
+          title="Salvar"
+          type="submit"
+          color="primary"
+      ></app-button>
+      <app-button
+          title="Cancelar"
+          type="button"
+          color="secondary"
+      ></app-button>
+  </div>
+</form>
+<script>
+  function preview() {
+    frame.src=URL.createObjectURL(event.target.files[0]);
+  }
+</script>

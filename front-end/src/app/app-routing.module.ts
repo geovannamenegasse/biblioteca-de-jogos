@@ -12,11 +12,13 @@ import { LojaComponent } from './pages/loja/loja.component';
 const routes: Routes = [
   { path: 'exemplo', component: ExemploComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'cliente', component: CadastroClienteComponent },
-  { path: 'cliente/:id', component: ContaClienteComponent },
   { path: 'jogo', component: CadastroJogoComponent },
   { path: 'biblioteca', component: BibliotecaComponent },
-  { path: 'loja', component: LojaComponent }
+  { path: 'loja', component: LojaComponent },
+  {
+    path: 'client', //?
+    loadChildren: () => import('./pages/cliente/cliente.module').then(m => m.ClienteModule)
+  }
 ];
 
 @NgModule({

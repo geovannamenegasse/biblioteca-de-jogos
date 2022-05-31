@@ -30,4 +30,7 @@ export class BibliotecaService {
     );
   }
 
+  insertJogo(record: Jogo){
+    return this.httpClient.post<Jogo>(this.API, record).pipe(first());
+  }
 }

@@ -1,3 +1,5 @@
+import { ClienteService } from './../cliente.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroClienteComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+
+  constructor(private formBuilder: FormBuilder,
+              private service: ClienteService) 
+  {
+    this.form = this.formBuilder.group({
+      name: [null],
+      login: [null],
+      password: [null]
+    });
+  }
 
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    this.service.insertCliente(this.form.value).subscribe(result => console.log(result), 
+    error => this.onError());
+  }
+
+  private onError(){
+    console.log('Erro ao salvar curso');
+  }
 }
