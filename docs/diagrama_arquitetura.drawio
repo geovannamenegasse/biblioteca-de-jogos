@@ -1,0 +1,22 @@
+<mxfile host="65bd71144e">
+    <diagram id="ZD_roegklXmNg9EvU27t" name="Page-1">
+        <mxGraphModel dx="1393" dy="881" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#333333" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Domain" style="swimlane;" vertex="1" parent="1">
+                    <mxGeometry x="209" y="191" width="200" height="188" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Controllers" style="swimlane;" vertex="1" parent="1">
+                    <mxGeometry x="-86" y="449" width="200" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Data Sources" style="swimlane;" vertex="1" parent="1">
+                    <mxGeometry x="487" y="449" width="200" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="index da aplicação&lt;br&gt;(Arquivo que executa&lt;br&gt;a API)" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document;container=1;" vertex="1" parent="1">
+                    <mxGeometry x="203" y="708" width="164" height="173" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
