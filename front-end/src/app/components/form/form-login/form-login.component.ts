@@ -29,7 +29,7 @@ export class FormLoginComponent implements OnInit {
 
   onSubmit(){
     this.service.login(this.form.value).subscribe(result => {
-      this._window.localStorage.setItem('token', result.token);   
+      this._window.localStorage.setItem('token', result.token);
       console.log(this._window.localStorage.getItem('token'));
     },
     error => this.onError());

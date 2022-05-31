@@ -3,7 +3,7 @@
       <app-card-jogo
           *ngFor="let jogo of jogos$ | async"
           [title]="jogo.name"
-          [routerLink]="['/jogo', jogo.id]">{{jogo.name}}<br>
+          [routerLink]="['/jogo']">{{jogo.name}}<br>
       </app-card-jogo>
   </div>
 </div>

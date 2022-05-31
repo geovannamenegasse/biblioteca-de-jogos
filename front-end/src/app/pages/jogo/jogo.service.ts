@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { first } from 'rxjs';
+import { ICustomWindow, WindowRefService } from '../login/windowref.service';
 import { Jogo } from './jogo';
 
 @Injectable({
@@ -8,11 +9,20 @@ import { Jogo } from './jogo';
 })
 export class JogoService {
 
+  private _window: ICustomWindow;
   private readonly API = 'api/game';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,
+            private windowRef: WindowRefService) {  
+    this._window = windowRef.nativeWindow;
+  }
 
   insertJogo(record: Jogo){
-    return this.httpClient.post<Jogo>(this.API+'/create', record).pipe(first());
+    const headers = new HttpHeaders(
+      { 
+        'Content-Type': 'application/json', 
+        'auth' : this._window.localStorage.getItem('token') || ''
+      });
+    return this.httpClient.post<Jogo>(this.API+'/create', record, { headers : headers }).pipe(first());
   }
 }
