@@ -30,6 +30,6 @@ export class CadastroClienteComponent implements OnInit {
   }
 
   private onError(){
-    console.log('Erro ao salvar curso');
+    console.log('Erro ao salvar cliente');
   }
 }

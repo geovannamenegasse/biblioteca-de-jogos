@@ -1,5 +1,67 @@
 <div class="container col-lg-9 col-md-9 col-sm-12 shadow-lg p-5 d-flex justify-content-center">
-  <div class="col-9">
-    <app-form-cadastro-jogo></app-form-cadastro-jogo>
-  </div>
+  
+  <form [formGroup]="form" class="full-width">
+    <div class="row">
+      <div class="col-6">
+        <label class="form-label">
+          Nome do jogo
+        </label>
+        <input type="text" class="form-control shadow bg-body rounded" matInput placeholder="Insira seu nome" formControlName="name" required="true"/>
+      </div>
+    
+      <div class="col-6">
+        <label class="form-label">
+          Nome
+        </label>
+        <input type="text" class="form-control shadow bg-body rounded" matInput placeholder="Insira seu nome" formControlName="name" required="true"/>
+      </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+      <div class="col-6">
+        <label class="form-label">
+          Nome do jogo
+        </label>
+        <input type="text" class="form-control shadow bg-body rounded" matInput placeholder="Insira seu nome" formControlName="name" required="true"/>
+      </div>
+     
+      <div class="col-6">
+      </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+      <div class="col-6">
+        <label class="form-label">
+          Nome do jogo
+        </label>
+        <textarea rows="3" class="form-control shadow bg-body rounded" matInput placeholder="Insira seu nome" formControlName="name" required="true"></textarea>
+      </div>
+     
+      <div class="col-6">
+      </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+      <app-button
+          title="Salvar"
+          type="submit"
+          color="primary"
+          (click)="onSubmit()"
+      ></app-button>    
+      <app-button
+          title="Cancelar"
+          type="button"
+          color="light"
+      ></app-button>
+    </div>
+  </form>
+
 </div>
+
+

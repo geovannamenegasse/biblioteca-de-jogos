@@ -1,6 +1,6 @@
+import { ButtonModule } from './../../../components/button/button.module';
 import { CadastroClienteComponent } from './cadastro-cliente.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormModule } from './../../../components/form/form.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
@@ -13,7 +13,8 @@ import { MatInputModule } from '@angular/material/input';
   imports: [
     CommonModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ButtonModule
   ]
 })
 export class CadastroClienteModule { }

@@ -1,4 +1,5 @@
 export interface Jogo{
     id: string;
-    nome: string;
+    name: string;
+    genre: string;
 }

@@ -1,5 +1,5 @@
+import { JogoModule } from './pages/jogo/jogo.module';
 import { ClienteModule } from './pages/cliente/cliente.module';
-import { CadastroClienteModule } from './pages/cliente/cadastro-cliente/cadastro-cliente.module';
 import { ButtonModule } from './components/button/button.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,8 +17,6 @@ import { FormModule } from './components/form/form.module';
 import { CardJogoComponent } from './components/card/card-jogo/card-jogo.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { LoginComponent } from './pages/login/login.component';
-import { CadastroClienteComponent } from './pages/cliente/cadastro-cliente/cadastro-cliente.component';
-import { CadastroJogoComponent } from './pages/jogo/cadastro-jogo/cadastro-jogo.component';
 import { ContaClienteComponent } from './pages/cliente/conta-cliente/conta-cliente.component';
 import { LojaComponent } from './pages/loja/loja.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -35,7 +33,6 @@ import { HttpClientModule } from '@angular/common/http';
     ModalComponent,
     LoginComponent, 
     ContaClienteComponent,
-    CadastroJogoComponent,
     LojaComponent,
   ],
   imports: [
@@ -46,7 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormModule,
     ButtonModule,
     HttpClientModule,
-    ClienteModule
+    ClienteModule,
+    JogoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

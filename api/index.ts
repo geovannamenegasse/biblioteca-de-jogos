@@ -6,6 +6,8 @@ import express, { Express, Request, Response } from 'express';
 import ExampleHttpController from './controllers/http/ExampleController';
 import sequelize from './dataSources/sequelize';
 import ClientCreationController from './controllers/http/client/ClientCreationController';
+import GameCreationController from './controllers/http/game/GameCreationController';
+
 import cors from 'cors';
 import helmet from 'helmet'
 import UserAuthenticationController from './controllers/http/user/UserAuthenticationController'
@@ -34,6 +36,7 @@ app.use(express.json());
 app.use('/example', ExampleHttpController);
 app.use('/api/client', ClientCreationController);
 app.use('/api/user', UserAuthenticationController);
+app.use('/api/game', GameCreationController);
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
