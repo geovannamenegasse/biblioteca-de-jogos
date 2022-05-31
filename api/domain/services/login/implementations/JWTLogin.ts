@@ -16,6 +16,10 @@ class JWTLogin implements LoginService {
 
     var client = await this.userRepository.getClientByLogin(login);
 
+    if (!client) {
+      throw new Error("Client was not found")
+    }
+
     const jwtSecret = process.env.JWT_SECRET ? process.env.JWT_SECRET : "";
     const token = jwt.sign(
       { userId: client.user.id, login: client.user.login },

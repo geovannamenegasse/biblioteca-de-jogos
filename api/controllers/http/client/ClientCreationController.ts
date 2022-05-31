@@ -7,7 +7,7 @@ import { checkJwt } from '../middlewares/authentication/checkJwt';
 
 const router = express.Router();
 
-router.post('/create', [checkJwt], async (req: Request, res: Response) => {
+router.post('/create', async (req: Request, res: Response) => {
   var createdClient = await clientCRUDService.create(
     new Client(undefined, req.body.name,
       new User(undefined, req.body.login, req.body.password)
