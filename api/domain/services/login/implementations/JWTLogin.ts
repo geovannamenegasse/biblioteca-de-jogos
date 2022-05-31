@@ -1,23 +1,29 @@
 import LoginService from "../LoginService";
 import * as jwt from "jsonwebtoken";
+import UserRepository from "../../../repositories/UserRepository";
 
 class JWTLogin implements LoginService {
-  login(login: string, password: string): string {
+  private userRepository: UserRepository;
+
+  constructor(userRepository : UserRepository) {
+      this.userRepository = userRepository;
+  }
+
+  async login(login: string, password: string): Promise<string> {
     if (!(login && password)) {
       throw new Error("Login and password needs to have a value");
     }
 
-    //Get user from database with username
+    var client = await this.userRepository.getClientByLogin(login);
 
-    //Sing JWT, valid for 1 hour
     const jwtSecret = process.env.JWT_SECRET ? process.env.JWT_SECRET : "";
     const token = jwt.sign(
-      { userId: 0, username: "user.username" },
+      { userId: client.user.id, login: client.user.login },
       jwtSecret,
-      { expiresIn: "1h" }
+      { expiresIn: "2h" }
     );
 
-    return "";
+    return token;
   }
 }
 

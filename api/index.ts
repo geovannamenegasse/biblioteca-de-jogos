@@ -8,6 +8,7 @@ import sequelize from './dataSources/sequelize';
 import ClientCreationController from './controllers/http/client/ClientCreationController';
 import cors from 'cors';
 import helmet from 'helmet'
+import UserAuthenticationController from './controllers/http/user/UserAuthenticationController'
 
 const app: Express = express();
 
@@ -31,7 +32,8 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 app.use('/example', ExampleHttpController);
-app.use('/client', ClientCreationController);
+app.use('/api/client', ClientCreationController);
+app.use('/api/user', UserAuthenticationController);
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
