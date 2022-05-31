@@ -20,6 +20,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ContaClienteComponent } from './pages/cliente/conta-cliente/conta-cliente.component';
 import { LojaComponent } from './pages/jogo/loja/loja.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WindowRefService } from './pages/login/windowref.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
     ClienteModule,
     JogoModule
   ],
-  providers: [],
+  providers: [WindowRefService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
