@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { catchError, Observable, of } from 'rxjs';
 import { Jogo } from '../jogo';
 import { LojaService } from './loja.service';
@@ -9,10 +11,14 @@ import { LojaService } from './loja.service';
   styleUrls: ['./loja.component.css']
 })
 export class LojaComponent implements OnInit {
+  modalRef?: BsModalRef;
+  message?: string;
 
   public jogos$: Observable<Jogo[]>;
 
-  constructor(private lojaService: LojaService) {
+  constructor(private lojaService: LojaService,
+    private modalService: BsModalService,
+    private snackBar: MatSnackBar) {
     this.jogos$ = this.lojaService.getJogos()
     .pipe(
       catchError(error => {
@@ -26,4 +32,17 @@ export class LojaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
+  }
+ 
+  confirm(): void {
+    this.snackBar.open("Jogo adquirido com sucesso!", '', {duration : 5000});
+    this.modalRef?.hide();
+  }
+ 
+  decline(): void {
+    // this.message = 'Declined!';
+    this.modalRef?.hide();
+  }
 }

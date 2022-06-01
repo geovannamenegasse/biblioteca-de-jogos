@@ -1,5 +1,8 @@
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginService } from 'src/app/pages/login/login.service';
 import { ICustomWindow, WindowRefService } from 'src/app/pages/login/windowref.service';
 
@@ -15,7 +18,10 @@ export class FormLoginComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private service: LoginService,
-    private windowRef: WindowRefService)
+    private windowRef: WindowRefService,
+    private snackBar: MatSnackBar,
+    private location: Location,
+    private router: Router)
   {
     this._window = windowRef.nativeWindow;
     this.form = this.formBuilder.group({
@@ -31,11 +37,21 @@ export class FormLoginComponent implements OnInit {
     this.service.login(this.form.value).subscribe(result => {
       this._window.localStorage.setItem('token', result.token);
       console.log(this._window.localStorage.getItem('token'));
+      this.onSuccess();
     },
     error => this.onError());
   }
 
+  onCancel(){
+    this.location.back();
+  }
+
+  private onSuccess(){
+    this.snackBar.open("Login realizado com sucesso!", '', {duration : 5000});
+    this.router.navigate(['/biblioteca']);
+  }
+
   private onError(){
-    console.log('Erro ao fazer login');
+    this.snackBar.open("Erro ao fazer login!", '', {duration : 5000});
   }
 }

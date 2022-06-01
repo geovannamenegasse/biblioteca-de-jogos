@@ -1,3 +1,4 @@
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CadastroJogoModule } from './cadastro-jogo/cadastro-jogo.module';
 import { JogoRoutingModule } from './jogo-routing.module';
 import { NgModule } from '@angular/core';
@@ -10,7 +11,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     JogoRoutingModule,
-    CadastroJogoModule
+    CadastroJogoModule,
+    MatSnackBarModule
   ]
 })
 export class JogoModule { }

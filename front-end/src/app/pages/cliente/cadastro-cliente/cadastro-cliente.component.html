@@ -29,20 +29,23 @@
       </label>
       <input type="password" class="form-control shadow bg-body rounded" matInput placeholder="Insira sua senha" formControlName="password" required="true"/>
     </div>
-    <br/>
+    <br/><br/>
     <div class="row">
       <app-button
-          title="Entrar"
+          title="Salvar"
           type="submit"
           color="primary"
           (click)="onSubmit()"
       ></app-button>
     </div>
-
-    <div class="row text-center mt-3">
-      <a routerLink="/login" class="link-primary">
-          Já tem uma conta? Faça login
-      </a>
+    <br/>
+    <div class="row">
+      <app-button
+          title="Cancelar"
+          type="submit"
+          color="light"
+          (click)="onCancel()"
+      ></app-button>
     </div>
   </form>
 

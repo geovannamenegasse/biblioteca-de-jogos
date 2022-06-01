@@ -11,8 +11,8 @@ export class CardJogoComponent implements OnInit {
   public title: string = '';
   @Input()
   public img: string = '';
-  @Input()
-  public link: string = '';
+  // @Input()
+  // public link: string = '';
 
   constructor() { }
 

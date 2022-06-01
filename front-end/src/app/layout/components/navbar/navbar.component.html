@@ -1,4 +1,4 @@
-<nav *ngIf="router.url != '/login'" class="shadow-lg navbar navbar-expand-lg fixed-top bg-light">
+<nav *ngIf="router.url != '/login' && router.url != '/client/create'" class="shadow-lg navbar navbar-expand-lg fixed-top bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" routerLink="/biblioteca">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-joystick" viewBox="0 0 16 16">
@@ -21,7 +21,7 @@
             <a class="nav-link" routerLink="game/biblioteca">Biblioteca</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/client/create">Conta</a>
+            <a class="nav-link disabled">Conta</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" routerLink="/exemplo">Exemplo</a>

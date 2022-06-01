@@ -1,6 +1,10 @@
 <div class="container col-lg-7 col-md-7 col-sm-12 shadow-lg p-5 d-flex justify-content-center">
 
   <form [formGroup]="form" class="full-width">
+    <div class="text-center row">
+      <h1>Publique um jogo</h1><br/>
+    </div>
+    <br/>
     <div class="row">
       <div class="col-6">
         <label class="form-label">
@@ -29,8 +33,8 @@
         <input type="text" class="form-control shadow bg-body rounded" matInput placeholder="Insira a categoria" formControlName="genre" required="true"/>
       </div>
 
-      <div class="col-6" style="position: absolute; padding-left: 350px;">
-        <img id="game-image" alt="your image" width="200" height="200" />
+      <div class="col-6" style="position: absolute; padding-left: 355px;">
+        <img id="game-image" alt="your image" width="200" height="200" class="rounded" />
       </div>
     </div>
 
@@ -49,21 +53,25 @@
       </div>
     </div>
 
-    <br/>
+    <br/><br/>
 
-    <div class="row">
+    <div class="row" align="center">
       <app-button
           title="Salvar"
           type="submit"
           color="primary"
-          size="col-6"
+          size="col-9"
           (click)="onSubmit()"
       ></app-button>
+    </div>
+    <br/>
+    <div class="row" align="center">
       <app-button
           title="Cancelar"
           type="button"
           color="light"
-          size="col-6"
+          size="col-9"
+          (click)="onCancel()"
       ></app-button>
     </div>
   </form>

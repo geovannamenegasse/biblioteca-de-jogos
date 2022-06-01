@@ -1,3 +1,4 @@
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ButtonModule } from './../button/button.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -18,7 +19,8 @@ import { FormCadastroJogoComponent } from './form-cadastro-jogo/form-cadastro-jo
     InputModule,
     ButtonModule,
     FormRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   exports: [
     FormLoginComponent,

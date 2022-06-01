@@ -15,12 +15,14 @@ import { NavbarComponent } from './layout/components/navbar/navbar.component';
 import { InputModule } from './components/input/input.module';
 import { FormModule } from './components/form/form.module';
 import { CardJogoComponent } from './components/card/card-jogo/card-jogo.component';
-import { ModalComponent } from './components/modal/modal.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ContaClienteComponent } from './pages/cliente/conta-cliente/conta-cliente.component';
 import { LojaComponent } from './pages/jogo/loja/loja.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WindowRefService } from './pages/login/windowref.service';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,6 @@ import { WindowRefService } from './pages/login/windowref.service';
     LayoutComponent,
     NavbarComponent,
     CardJogoComponent,
-    ModalComponent,
     LoginComponent,
     ContaClienteComponent,
     LojaComponent,
@@ -45,7 +46,8 @@ import { WindowRefService } from './pages/login/windowref.service';
     ButtonModule,
     HttpClientModule,
     ClienteModule,
-    JogoModule
+    JogoModule,
+    ModalModule.forRoot()
   ],
   providers: [WindowRefService],
   bootstrap: [AppComponent]
