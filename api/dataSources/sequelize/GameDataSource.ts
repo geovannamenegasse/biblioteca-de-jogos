@@ -11,6 +11,10 @@ class GameDataSource implements GameRepository {
 
         return gameMapper.map(gameModel, GameModel, Game);
     }
+
+    async getAll(): Promise<Game[]> {
+        return gameMapper.map(await GameModel.findAll(), GameModel[], Game[]);
+    }
 }
 
 export default GameDataSource;

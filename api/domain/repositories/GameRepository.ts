@@ -7,6 +7,8 @@ interface GameRepository {
 
     insert(game: Game) : Promise<Game>;
 
+    getAll() : Promise<Game[]>;
+
     // update(game: Game) : Promise<Game>;
 }
 

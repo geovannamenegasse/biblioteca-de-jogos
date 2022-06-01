@@ -12,6 +12,10 @@ class GameCRUD implements GameCRUDService {
     async create(game: Game): Promise<Game> {
         return await this.gameRepository.insert(game);
     }
+
+    async getAll(): Promise<Game[]> {
+        return await this.gameRepository.getAll();
+    }
 }
 
 export default GameCRUD;
