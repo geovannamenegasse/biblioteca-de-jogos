@@ -51,8 +51,7 @@ Ser um local centralizado para compra, venda e gerenciamento de jogos. Permitind
 1. Como administrador quero publicar jogos de empresas para que os usuários possam encontrá-lo na loja
 2. Como administrador quero ter acesso a uma biblioteca com todos os jogos publicados para gerenciá-los
 7. Como usuário quero poder me cadastrar no sistema para criar uma conta e fazer login
-8. Como usuário quero poder gerenciar a minha conta para visualizar e editar meus dados
-9. Como usuário quero ter acesso a minha biblioteca de jogos comprados para fazer download
+9. Como usuário quero ter acesso a minha biblioteca de jogos comprados
 10. Como usuário quero ter acesso a loja de jogos para escolher jogos para comprar
 
 ## Tarefas da Sprint
@@ -62,8 +61,8 @@ Ser um local centralizado para compra, venda e gerenciamento de jogos. Permitind
 | Formulário de cadastro de usuário      (front)   |Geovanna  |     07      |  Concluído     |
 | Formulário de cadastro de usuário       (back)   |Vitor     |     07      |  Concluído     |
 | Modelo de usuário                       (back)   |Vitor     |     07      |  Concluído     |
-| Formulário de login e logout           (front)   |Geovanna  |     07      |  Concluído     |
-| Formulário de login e logout            (back)   |Vitor     |     07      |  Concluído     |
+| Formulário de login                    (front)   |Geovanna  |     07      |  Concluído     |
+| Formulário de login                     (back)   |Vitor     |     07      |  Concluído     |
 | Formulário de publicação de jogos      (front)   |Geovanna  |     01      |  Concluído     |
 | Formulário de publicação de jogos       (back)   |Rodrigo   |     01      |  Concluído     |
 | Modelo de jogo                          (back)   |Vitor     |     01      |  Concluído     |
@@ -72,8 +71,8 @@ Ser um local centralizado para compra, venda e gerenciamento de jogos. Permitind
 | Tela de biblioteca de jogos             (back)   |Vitor     |     09      |  Em andamento  |
 | Modelo de biblioteca                    (back)   |Vitor     |     09      |  Concluído     |
 | Tela da loja de jogos                  (front)   |Geovanna  |     10      |  Concluído     |
-| Tela da loja de jogos                   (back)   |Rodrigo   |     10      |  Em aprovação  |
-| Modal para comprar o jogo              (front)   |Geovanna  |     10      |  Em andamento  |
+| Tela da loja de jogos                   (back)   |Rodrigo   |     10      |  Em andamento  |
+| Modal para comprar o jogo              (front)   |Geovanna  |     10      |  Concluído     |
 | Modal para comprar o jogo               (back)   |Vitor     |     10      |  Em andamento  |
 
 ## Rodando o projeto
@@ -114,3 +113,8 @@ As instruções aqui são especificamente para a pasta ``/front-end`` do projeto
 #### Rodando o front-end
 
 - Rode o comando ``ng serve``.
+
+
+## Arquitetura
+
+![alt text](docs/diagrama_arquitetura.drawio.png)
