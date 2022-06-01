@@ -1,3 +1,4 @@
+import GameModel from "../../../../dataSources/sequelize/models/GameModel";
 import Game from "../../../entities/Game";
 import GameRepository from "../../../repositories/GameRepository";
 import GameCRUDService from "../GameCRUDService";
@@ -13,7 +14,7 @@ class GameCRUD implements GameCRUDService {
         return await this.gameRepository.insert(game);
     }
 
-    async getAll(): Promise<Game[]> {
+    async getAll(): Promise<GameModel[]> {
         return await this.gameRepository.getAll();
     }
 }

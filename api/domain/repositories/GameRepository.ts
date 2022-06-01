@@ -1,3 +1,4 @@
+import GameModel from "../../dataSources/sequelize/models/GameModel";
 import Game from "../entities/Game";
 
 interface GameRepository {
@@ -7,7 +8,7 @@ interface GameRepository {
 
     insert(game: Game) : Promise<Game>;
 
-    getAll() : Promise<Game[]>;
+    getAll() : Promise<GameModel[]>;
 
     // update(game: Game) : Promise<Game>;
 }

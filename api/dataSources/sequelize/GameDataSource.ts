@@ -1,3 +1,5 @@
+import { raw } from "body-parser";
+import { INTEGER } from "sequelize/types";
 import Game from "../../domain/entities/Game";
 import GameRepository from "../../domain/repositories/GameRepository";
 import gameMapper from "./mappers/GameMapper";
@@ -12,8 +14,13 @@ class GameDataSource implements GameRepository {
         return gameMapper.map(gameModel, GameModel, Game);
     }
 
-    async getAll(): Promise<Game[]> {
-        return gameMapper.map(await GameModel.findAll(), GameModel[], Game[]);
+    async getAll(): Promise<GameModel[]> {
+       return await GameModel.findAll({raw:true});
+    //    return gameMapper.map(await GameModel.findAll({
+    //        raw: true,
+    //        include: [{model: GameModel}]
+    //     }), 
+    //     GameModel[], Game[]);
     }
 }
 

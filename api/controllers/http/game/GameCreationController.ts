@@ -21,7 +21,10 @@ router.post('/create', [checkJwt], async (req: Request, res: Response) => {
 router.get('/getAll', [checkJwt], async (req: Request, res: Response) => {
   var allGames = await gameCRUDService.getAll();
 
-  res.json(allGames);
+  // res.json(allGames);
+  res.send({
+    allGames
+  });
 })
 
 export default router;
