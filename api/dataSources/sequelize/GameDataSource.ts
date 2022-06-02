@@ -6,6 +6,19 @@ import gameMapper from "./mappers/GameMapper";
 import GameModel from "./models/GameModel";
 
 class GameDataSource implements GameRepository {
+    async getGameBy(id: number): Promise<Game> {
+        return gameMapper.map(await GameModel.findByPk(id), GameModel, Game);
+    }
+
+    async getGameByName(name: string): Promise<Game> {
+        return gameMapper.map(await GameModel.findOne(
+            {
+                raw:true,
+                where: {name: name}
+            }
+        ), GameModel, Game);
+    }
+
     async insert(game: Game): Promise<Game> {
         var gameModel = gameMapper.map(game, Game, GameModel);
 
@@ -14,13 +27,15 @@ class GameDataSource implements GameRepository {
         return gameMapper.map(gameModel, GameModel, Game);
     }
 
-    async getAll(): Promise<GameModel[]> {
-       return await GameModel.findAll({raw:true});
-    //    return gameMapper.map(await GameModel.findAll({
-    //        raw: true,
-    //        include: [{model: GameModel}]
-    //     }), 
-    //     GameModel[], Game[]);
+    async getAll(): Promise<Game[]> {
+       var allGamesModel = await GameModel.findAll({raw:true});
+       var allGamesList = []
+
+       for (let i = 0; i < allGamesModel.length; i++) {
+           var game = gameMapper.map(allGamesModel[i], GameModel, Game);
+           allGamesList.push(game);
+       }
+       return allGamesList;
     }
 }
 
