@@ -1,6 +1,6 @@
 <div class="container col-lg-5 col-md-5 col-sm-12 shadow-lg p-5 d-flex justify-content-center">
 
-  <form [formGroup]="form" class="full-width">
+  <form [formGroup]="form" id="form" class="full-width">
     <div class="text-center row">
       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-joystick" viewBox="0 0 16 16">
           <path d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2z"/>
@@ -13,21 +13,21 @@
       <label class="form-label">
         Nome
       </label>
-      <input type="text" class="form-control shadow bg-body rounded" matInput placeholder="Insira seu nome" formControlName="name" required="true"/>
+      <input type="text" class="form-control shadow bg-body rounded" matInput placeholder="Insira seu nome" formControlName="name" id="name" required="true"/>
     </div>
     <br/>
     <div class="col-12">
       <label class="form-label">
         Login
       </label>
-      <input type="email" class="form-control shadow bg-body rounded" matInput placeholder="Insira seu e-mail" formControlName="login" required="true"/>
+      <input type="email" class="form-control shadow bg-body rounded" matInput placeholder="Insira seu e-mail" formControlName="login" id="login" required="true"/>
     </div>
     <br/>
     <div class="col-12">
       <label class="form-label">
         Senha
       </label>
-      <input type="password" class="form-control shadow bg-body rounded" matInput placeholder="Insira sua senha" formControlName="password" required="true"/>
+      <input type="password" class="form-control shadow bg-body rounded" matInput placeholder="Insira sua senha" formControlName="password" id="password" required="true"/>
     </div>
     <br/><br/>
     <div class="row">

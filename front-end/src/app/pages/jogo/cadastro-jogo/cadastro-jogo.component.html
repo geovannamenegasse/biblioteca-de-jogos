@@ -1,6 +1,6 @@
 <div class="container col-lg-7 col-md-7 col-sm-12 shadow-lg p-5 d-flex justify-content-center">
 
-  <form [formGroup]="form" class="full-width">
+  <form [formGroup]="form" id="form" class="full-width">
     <div class="text-center row">
       <h1>Publique um jogo</h1><br/>
     </div>
@@ -10,7 +10,7 @@
         <label class="form-label">
           Nome do jogo
         </label>
-        <input type="text" class="form-control shadow bg-body rounded" matInput placeholder="Insira o nome do jogo" formControlName="name" required="true"/>
+        <input type="text" class="form-control shadow bg-body rounded" matInput placeholder="Insira o nome do jogo" formControlName="name" id="name" required="true"/>
       </div>
 
       <div class="col-6">
@@ -18,8 +18,7 @@
           Imagem
         </label>
         <input accept="image/*" class="form-control shadow bg-body rounded" type="file" id="formFile"
-        onchange="document.getElementById('game-image').src = window.URL.createObjectURL(this.files[0])">
-        <!-- <input type="file" class="form-control shadow bg-body rounded" matInput placeholder="Insira seu nome" formControlName="name" required="true"/> -->
+          onchange="document.getElementById('game-image').src = window.URL.createObjectURL(this.files[0])"/>
       </div>
     </div>
 
@@ -30,7 +29,7 @@
         <label class="form-label">
           Categoria
         </label>
-        <input type="text" class="form-control shadow bg-body rounded" matInput placeholder="Insira a categoria" formControlName="genre" required="true"/>
+        <input type="text" class="form-control shadow bg-body rounded" matInput placeholder="Insira a categoria" formControlName="genre" id="genre" required="true"/>
       </div>
 
       <div class="col-6" style="position: absolute; padding-left: 355px;">
@@ -45,7 +44,7 @@
         <label class="form-label">
           Descrição
         </label>
-        <textarea rows="3" class="form-control shadow bg-body rounded" matInput placeholder="Insira a descrição" formControlName="description" required="true"></textarea>
+        <textarea rows="3" class="form-control shadow bg-body rounded" matInput placeholder="Insira a descrição" formControlName="description" id="description" required="true"></textarea>
       </div>
 
       <div class="col-6" style="position: relative;">
