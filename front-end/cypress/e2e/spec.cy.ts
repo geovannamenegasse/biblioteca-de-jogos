@@ -1,10 +1,5 @@
 describe('Teste End-to-End', () => {
 
-    // beforeEach(() => {
-    
-    // })
-
-
     it('Publicar um jogo', () => {
         cy.login('geovannamenegasse', '12345')
         cy.visit('http://localhost:4200/game/create')
@@ -55,9 +50,10 @@ describe('Teste End-to-End', () => {
         
       cy.visit('http://localhost:4200/game/store')
       
-      cy.get('[id="Skyrim"]').select('Jogo de teste',{force: true}).click()
+      cy.get('[id="Skyrim"]').click({ force: true })
+      cy.wait(5000)
       cy.contains('Sim').click()   
-
+      cy.wait(5000)
       cy.visit('http://localhost:4200/game/biblioteca')
       cy.contains('Jogo de teste').should('exist')
 
