@@ -19,19 +19,19 @@ interface LibraryCreationAttributes extends Optional<LibraryAttributes, 'id'> {}
 })
 class LibraryModel extends Model<LibraryAttributes, LibraryCreationAttributes>
 {
-//   @BelongsTo(() => UserModel, {foreignKey:{name: "userId", allowNull: false}})
-//   @AutoMap()
-//   public user!: UserModel;
+  @BelongsTo(() => UserModel, {foreignKey:{name: "userId", allowNull: false}})
+  @AutoMap()
+  public user!: UserModel;
   
-//   // @HasMany(() => GameModel, {foreignKey:{name: "libraryId"}})
-//   @AutoMap()
-//   public games!: GameModel[];
+  @HasMany(() => GameModel, {foreignKey:{name: "libraryId"}})
+  @AutoMap()
+  public games!: GameModel[];
 
-//   @CreatedAt
-//   public readonly createdAt!: Date;
+  @CreatedAt
+  public readonly createdAt!: Date;
 
-//   @UpdatedAt
-//   public readonly updatedAt!: Date;
+  @UpdatedAt
+  public readonly updatedAt!: Date;
 }
 
 export default LibraryModel;
