@@ -8,6 +8,7 @@ import sequelize from './dataSources/sequelize';
 import ClientCreationController from './controllers/http/client/ClientCreationController';
 import GameCreationController from './controllers/http/game/GameCreationController';
 import GameListingController from './controllers/http/gameListing/GameListingController';
+import LibraryCreationController from './controllers/http/library/LibraryCreationController';
 
 import cors from 'cors';
 import helmet from 'helmet'
@@ -39,6 +40,7 @@ app.use('/api/client', ClientCreationController);
 app.use('/api/user', UserAuthenticationController);
 app.use('/api/game', GameCreationController);
 app.use('/api/gameListing', GameListingController);
+app.use('/api/library')
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
