@@ -40,7 +40,7 @@ app.use('/api/client', ClientCreationController);
 app.use('/api/user', UserAuthenticationController);
 app.use('/api/game', GameCreationController);
 app.use('/api/gameListing', GameListingController);
-app.use('/api/library', LibraryCreationController)
+app.use('/api/library', LibraryCreationController);
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
