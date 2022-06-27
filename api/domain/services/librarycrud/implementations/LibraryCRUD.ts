@@ -6,25 +6,30 @@ import LibraryCRUDService from "../LibraryCRUDService";
 
 class LibraryCRUD implements LibraryCRUDService {
     private libraryRepository: LibraryRepository;
-
+    
     constructor(libraryRepository : LibraryRepository) {
         this.libraryRepository = libraryRepository;
     }
-
-    async getLibraryBy(id: number): Promise<Library> {
-        return await this.libraryRepository.getLibraryBy(id);
+    
+    async create(library: Library): Promise<Library> {
+        return await this.libraryRepository.create(library);
     }
 
-    async insertGame(gameId: number, userId: number): Promise<Game> {
-        return await this.libraryRepository.insertGame(gameId, userId);
+    // async insertGame(library: Library): Promise<Library> {
+    //     return await this.libraryRepository.insertGame(library);
+    // }
+
+    // async getLibraryBy(id: number): Promise<Library> {
+    //     return await this.libraryRepository.getLibraryBy(id);
+    // }
+
+
+    async getAllGamesFrom(userId: number): Promise<Game[]> {
+        return await this.libraryRepository.getAllGamesFrom(userId);
     }
 
-    async getAllGames(userId: number): Promise<Game[]> {
-        return await this.libraryRepository.getAllGames(userId);
-    }
-
-    async create(userId: number): Promise<Library> {
-        return await this.libraryRepository.create(userId);
+    async removeGame(userId: number, gameId: number): Promise<Game> {
+        return await this.libraryRepository.removeGame(userId, gameId);
     }
 }
 

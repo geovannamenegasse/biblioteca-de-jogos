@@ -3,17 +3,17 @@ import Game from "../entities/Game";
 import User from "../entities/User";
 
 interface LibraryRepository {
-    getLibraryBy(id: number) : Promise<Library>;
+    create(library: Library) : Promise<Library>; 
 
-    insertGame(gameId: number, userId: number) : Promise<Game>;
+    // insertGame(library: Library) : Promise<Library>;
+    
+    // getLibraryBy(id: number) : Promise<Library>;
 
-    // removeGame(game: Game) : Promise<Library>;
-
-    getAllGames(userId: number) : Promise<Game[]>;
-
-    create(userId: number) : Promise<Library>; 
+    getAllGamesFrom(userId: number) : Promise<Game[]>;
 
     // update(game: Library) : Promise<Library>;
+
+    removeGame(userId: number, gameId: number) : Promise<Game>;
 }
 
 export default LibraryRepository;

@@ -1,5 +1,6 @@
 import { createMapper, addProfile} from '@automapper/core';
 import { classes } from '@automapper/classes';
+import clientProfile from './profiles/ClientProfile';
 import userProfile from './profiles/UserProfile';
 
 const userMapper = createMapper({
@@ -7,5 +8,6 @@ const userMapper = createMapper({
 });
 
 addProfile(userMapper, userProfile);
+addProfile(userMapper, clientProfile);
 
 export default userMapper;

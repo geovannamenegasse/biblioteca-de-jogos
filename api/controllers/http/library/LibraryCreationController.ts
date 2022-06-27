@@ -2,37 +2,47 @@ import express from 'express';
 import { Response, Request } from 'express';
 import Library from '../../../domain/entities/Library';
 import libraryCRUDService from '../../../domain/services/librarycrud';
-import { checkJwt } from '../middlewares/authentication/checkJwt';
+import gameCRUDService from '../../../domain/services/gamecrud';
 
 const router = express.Router();
 
-router.post('/create', [checkJwt], async (req: Request, res: Response) => {
-  var createdLibrary = await libraryCRUDService.create(parseInt(req.params.userId));
+router.post('/create', async (req: Request, res: Response) => {
+                                              // parseInt(req.body.userId);
+  var createdLibrary = await libraryCRUDService.create(
+    new Library(undefined, req.body.userId, req.body.gameId)
+  );
 
-  res.send({
-    id: createdLibrary.id,
-    user: createdLibrary.user,
-    games: createdLibrary.games
-  });
-})
+  res.send(createdLibrary);
+});
 
-router.post('/insertGame', [checkJwt], async (req: Request, res: Response) => {
-    var insertedGame = await libraryCRUDService.insertGame(parseInt(req.params.gameId), parseInt(req.params.userId));
+router.get('/getAllFrom', async (req: Request, res: Response) => {
+  var allGames = await libraryCRUDService.getAllGamesFrom(req.body.userId);
+
+  res.send(allGames);
+});
+
+// router.post('/insertGame', [checkJwt], async (req: Request, res: Response) => {
+//     var insertedGame = await libraryCRUDService.insertGame(parseInt(req.body.gameId), parseInt(req.body.userId));
   
-    res.send(insertedGame);
-})
+//     res.send(insertedGame);
+// })
 
-router.get('/getAllGames', [checkJwt], async (req: Request, res: Response) => {
-    var allGames = await libraryCRUDService.getAllGames(parseInt(req.params.userId));
+// router.get('/getAllGames', [checkJwt], async (req: Request, res: Response) => {
+//     var allGames = await libraryCRUDService.getAllGames(parseInt(req.body.userId));
   
-    res.send(allGames);
-})
+//     res.send(allGames);
+// })
 
-router.get('/getOne/:id', [checkJwt], async (req: Request, res: Response) => {
-    console.log(req.params.id);
-    var library = await libraryCRUDService.getLibraryBy(parseInt(req.params.id));
+// router.get('/getOne/:id', [checkJwt], async (req: Request, res: Response) => {
+//     console.log(req.body.id);
+//     var library = await libraryCRUDService.getLibraryBy(parseInt(req.body.id));
   
-    res.send(library);
-  })
+//     res.send(library);
+//   })
+
+router.delete('/removeGame', async (req: Request, res: Response) => {
+  var removedGame = await libraryCRUDService.removeGame(req.body.userId, req.body.gameId);
+  res.send(removedGame);
+});
 
 export default router;
